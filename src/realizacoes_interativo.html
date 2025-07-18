@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Realizações Profissionais</title>
+    <link rel="icon" href="/images/nk.png" type="imagem/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        img, video{
+            width: 100%;
+            height: 100%;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .section-divider {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            margin: 50px 0;
+            border-radius: 2px;
+        }
+
+        .evidence-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .evidence-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .evidence-button:active {
+            transform: translateY(0);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            border-radius: 12px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 2px dashed #bdc3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-style: italic;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .metric {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .metric strong {
+            color: #e74c3c;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 100%; /* ocupa a altura da janela */
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      display: flex;
+      width: calc(100% * 2); /* 3 imagens, cada uma com 100% da largura */
+      height: 100%;
+      animation: slide2 9s infinite;
+    }
+
+    .carousel-slide1 {
+      display: flex;
+      width: calc(100% * 2); /* 3 imagens, cada uma com 100% da largura */
+      height: 100%;
+      animation: slide1 30s infinite;
+    }
+
+    .carousel-slide2 {
+      display: flex;
+      width: calc(100% * 2); /* 3 imagens, cada uma com 100% da largura */
+      height: 100%;
+      animation: slide2 15s infinite;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    @keyframes slide1 {
+    0%   { transform: translateX(0); }        /* Início: imagem 1 */
+    20%  { transform: translateX(0); }        /* Fica parado até 50% */
+    50%  { transform: translateX(-50%); }
+    70%  { transform: translateX(-50%); }
+    90%  { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+    }
+
+    @keyframes slide2 {
+    0%   { transform: translateX(0); }        /* Início: imagem 1 */
+    20%  { transform: translateX(0); }        /* Fica parado até 50% */
+    50%  { transform: translateX(-50%); }
+    70%  { transform: translateX(-50%); }
+    90%  { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+    }
+
+    @keyframes slide2 {
+    0%   { transform: translateX(0); }        /* Início: imagem 1 */
+    20%  { transform: translateX(0); }        /* Fica parado até 50% */
+    50%  { transform: translateX(-50%); }
+    70%  { transform: translateX(-50%); }
+    90%  { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório de Realizações Profissionais</h1>
+        
+        <div class="intro">
+            <p>Este documento detalha minhas principais contribuições e conquistas nos últimos 6 meses, bem como um panorama geral da minha trajetória profissional nos últimos 3 anos na empresa. O objetivo é apresentar de forma clara e objetiva o impacto do meu trabalho e a evolução das minhas competências, que me qualificam para um cargo de maior responsabilidade.</p>
+        </div>
+
+        <h2>Últimos 6 Meses: Contribuições e Impacto Recente</h2>
+
+        <h3>Refatoração de Front-end e Back-end do CaaS</h3>
+        <div class="metric">
+            <strong>Período:</strong> 15,5 dias de trabalho
+        </div>
+        <p>Realizei a refatoração completa do front-end e back-end do sistema CaaS. Embora a solução ainda não esteja em produção devido a inconsistências nos ambientes de Salesforce (HML e PROD), o trabalho foi concluído e passou por testes em HML. A importância desta tarefa reside na captação de novos clientes para Darede, demonstrando a capacidade de modernização e adaptação de nossas plataformas.</p>
+        <button class="evidence-button" onclick="openModal('modal1')">📸 Ver evidência da refatoração</button>
+
+        <h3>Validações de Faturamento Mensal (Billing)</h3>
+        <div class="metric">
+            <strong>Periodicidade:</strong> Mensal
+        </div>
+        <p>Assumi a responsabilidade pelas validações mensais de faturamento, uma tarefa que historicamente era centralizada no Aleixo devido à complexidade e à necessidade de consolidação de informações. Minha atuação garantiu a continuidade e a precisão desses processos críticos incluindo construção de documentos de repasse de conhecimento para o time.</p>
+        <button class="evidence-button" onclick="openModal('modal7')">📸 Ver evidências de responsabilidades</button>
+
+
+        <h3>Gestão Inovadora da Fila de Tickets</h3>
+        <div class="highlight-box">
+            <strong>Marco Histórico:</strong> Primeira profissional na história da equipe a esvaziar completamente a fila de tickets de suporte.
+        </div>
+        <p>Com base nas solicitações e nos padrões identificados, desenvolvi um documento abrangente de melhorias para o DSM  focado em clientes internos. Esta iniciativa não apenas resolveu problemas imediatos, mas também pavimentou o caminho para otimizações futuras.</p>
+        <button class="evidence-button" onclick="openModal('modal2')">📸 Ver reconhecimento sobre gestão de tickets</button>
+        <p><strong>OBS:</strong> 2 Melhorias já foram desenvolvidas no primeiro semestre de 2025. Link de melhorias anotadas: <a target="_blank" href="https://daredeprojetos.atlassian.net/wiki/spaces/DoSystem/pages/220954631/Melhorias+Salesforce+DSM">Confluence</a></p>
+
+        <h3>Equalização do DSM (Back-end e Front-end) e Inovações Técnicas</h3>
+        <div class="metric">
+            <strong>Período:</strong> 18 dias de trabalho
+        </div>
+        <p>Embora a solicitação inicial fosse apenas a equalização do DSM, minhas contribuições foram muito além, resultando em melhorias significativas na arquitetura e nos processos de desenvolvimento:</p>
+        
+        <ul>
+            <li><strong>Criação da Primeira Collection de Back-end:</strong> Desenvolvi a primeira (e até o momento, única) collection de back-end para as plataformas internas, estabelecendo um novo padrão de organização e reusabilidade de código. 
+            <button class="evidence-button" style="background: linear-gradient(135deg, #b834db, #b9295d);" onclick="openModal('modal8')">📸 Ver Collection</button>
+            </li>
+            <li><strong>Automação de Deploy com Versionamento da API:</strong> Atualizei o serverless.yml para automatizar a criação e atualização de APIs, garantindo que, em caso de falhas, uma nova API possa ser restabelecida em poucos minutos.
+            <button class="evidence-button" style="background: linear-gradient(135deg, #b834db, #b9295d);" onclick="openModal('modal9')">📸 Ver APIs criadas</button>
+            </li>
+            <li><strong>Atualização da Versão do Node da API:</strong> Realizei a atualização da versão do Node.js da API da versão 14 para a 18, modernizando nossa stack tecnológica.
+            <button class="evidence-button" style="background: linear-gradient(135deg, #b834db, #b9295d);" onclick="openModal('modal10')">📸 Ver Atualização</button>
+            </li>
+            <li><strong>Criação de Layers para Mitigação de Erros:</strong> Identifiquei e resolvi um problema recorrente de dependências excessivamente grandes que causavam quebras nos back-ends.
+            <button class="evidence-button" style="background: linear-gradient(135deg, #b834db, #b9295d);" onclick="openModal('modal11')">📸 Ver Reconhecimento</button>
+            </li>
+        </ul>
+        
+        <button class="evidence-button" onclick="openModal('modal3')">📸 Ver primeira GMUD bem-sucedida</button>
+
+        <div class="highlight-box">
+            <h4>Ponto de Diminuição de Retrabalho</h4>
+            <div class="metric">
+                <strong>Redução de tempo de testes:</strong> De mais de 4 horas para 10 minutos
+            </div>
+            <p>Com a criação da collection de back-end, conseguimos uma redução drástica no tempo de testes da API do DSM. Anteriormente, testávamos a plataforma inteira (24 páginas, diversas funcionalidades, requisições, modais e botões) sem visibilidade clara do que chamava a API. Agora, os testes são realizados na API completa através da Collection em apenas 10 minutos.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Ponto de Melhorias Internas</h4>
+        <h3>Melhoria no Consumo de Horas (Dosystems)</h3>
+        <div class="metric">
+            <strong>Status:</strong> Aprovado para produção | <strong>Tempo gasto:</strong> 2,3 dias
+        </div>
+        <p>Atuei na melhoria do sistema de consumo de horas, que é oficialmente o ticket mais solicitado na fila da Dosystems. Esta funcionalidade permitirá que clientes internos atualizem o consumo de horas (criação/deleção de apontamentos) nos contratos de forma mais eficiente, com as alterações refletidas imediatamente no portal e no DSM.
+        <button class="evidence-button" onclick="openModal('modal12')">📸 Ver Melhoria desenvolvida</button>
+        </p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Ponto de Assertividade em Estimativas</h4>
+        <h3>Projeto Correios: Simplicidade e Entrega Rápida</h3>
+        <div class="metric">
+            <strong>Período:</strong> 4,3 dias de trabalho (concluído antes do prazo)
+        </div>
+        <p>Realizei a estimativa e o desenvolvimento do projeto Correios, finalizando a tarefa no dia seguinte à sua atribuição, bem antes do prazo estipulado. Apesar de algumas adversidades no desenvolvimento do back-end da plataforma, minha agilidade e foco na entrega garantiram o sucesso do projeto.</p>
+
+        <h3>Tela de Gerenciamento de Permissões</h3>
+        <div class="metric">
+            <strong>Período:</strong> 1 dia de trabalho
+        </div>
+        <p>Desenvolvi a tela de gerenciamento de permissões, uma funcionalidade essencial para a nova estrutura de permissionamento e segurança, em conformidade com as normas ISO27001/2. A conclusão em apenas um dia demonstra minha capacidade de entregar soluções complexas com rapidez e eficiência.</p>
+        <button class="evidence-button" onclick="openModal('modal5')">📸 Ver comentário do Gui sobre complexidade</button>
+
+        </div>
+        <h3>Treinamento de Novos Integrantes</h3>
+        <p>Dediquei tempo e esforço ao treinamento de novos integrantes da equipe, incluindo Eduardo Silva, Julia Silveira e Ramos Janones. Compartilhei meu conhecimento e experiência para acelerar a curva de aprendizado deles, contribuindo diretamente para a produtividade e a integração do time.</p>
+
+        <hr class="section-divider">
+
+        <h2>Resumo dos 3 Anos de Trajetória: Uma Visão Abrangente</h2>
+        <p><em>Esta seção oferece um panorama das minhas principais atuações e projetos ao longo dos meus 3 anos na empresa, demonstrando a amplitude das minhas habilidades e a diversidade dos desafios que enfrentei e superei.</em></p>
+
+        <h3>Projeto Jacto: Inovação em Geoprocessamento e IoT</h3>
+        <div class="metric">
+            <strong>Contexto:</strong> Equipe de 3 JRs, incluindo eu
+        </div>
+        <p>Participei ativamente das calls para fechar a Prova de Conceito (POC) com a Jacto. O projeto exigiu o desenvolvimento de um script em C# (linguagem que eu nunca havia utilizado) para coletar dados via AWS IoT. A apresentação bem-sucedida deste script foi crucial para o cliente acreditar na capacidade da equipe em entregar a POC.</p>
+        
+        <div class="highlight-box">
+            <h4>Escopo da POC:</h4>
+            <ul>
+                <li>Desenvolvimento do Zero de uma Aplicação de Geoprocessamento</li>
+                <li>Coleta e Processamento de Dados MQTT</li>
+                <li>Armazenamento e Entrega em Tempo Real (Kinesis Firehose, S3, DynamoDB com DAX)</li>
+            </ul>
+        </div>
+
+        <p><strong>Minha Atuação:</strong></p>
+        <ul>
+            <li><strong>Back-end:</strong> Coleta, processamento e armazenamento de dados</li>
+            <li><strong>Front-end:</strong> Renderização dos polígonos criados</li>
+        </ul>
+        <button class="evidence-button" onclick="openModal('modal13')">📸 Ver Checkpoint</button>
+    
+
+        <h3>Projeto Houpa: Pioneirismo em Prototipagem e Design</h3>
+        <div class="highlight-box">
+            <strong>Marco:</strong> Minha primeira experiência com prototipagem e a primeira colaboradora a prototipar na Dosystems.
+        </div>
+        <p>Obtive um grande desempenho no redesenho completo da UI/UX da empresa, introduzindo fundamentos de design como benchmarking (pesquisa de mercado) e um fluxo de desenvolvimento de projetos com atuação de designers.</p>
+        <p><strong>Minha Atuação:</strong></p>
+        <ul>
+            <li><strong>Back-end:</strong> Migração de banco de dados antigo para novo. Coleta, Filtro, Tratamento e Inserção         <button class="evidence-button" onclick="openModal('modal14')">📸 Ver calls</button>
+</li>
+            <li><strong>Front-end:</strong> Desenvolvimento de telas</li>
+            <li><strong>UI UX:</strong> Implementação de fluxo funcional, e fundamentos de UIUX para valorizar produto do cliente         <button class="evidence-button" onclick="openModal('modal17')">📸 Ver evidências</button>
+</li>
+        </ul>
+
+        <h3>SP Data: Desenvolvimento Ágil com Nova Tecnologia</h3>
+        <p>Neste projeto, utilizei um framework nunca antes trabalhado por mim: Vue.js. Concluí a prototipagem e o desenvolvimento de todas as telas do front-end antes do prazo estipulado, demonstrando minha rápida adaptabilidade e eficiência na entrega de projetos com novas tecnologias sem utilização de ferramentas de IA.</p>
+        <button class="evidence-button" onclick="openModal('modal15')">📸 Ver calls</button>
+
+
+        <h3>Swift: Prototipagem de Chatbot</h3>
+        <div class="metric">
+            <strong>Período:</strong> Concluído em 2 dias
+        </div>
+        <p>Realizei a prototipagem de um chatbot, abrangendo desde o wireframing de baixa fidelidade até a alta fidelidade (desktop e mobile). A agilidade na entrega deste projeto reforça minha capacidade de transformar ideias em protótipos funcionais em tempo recorde.</p>
+        <a target="_blank" href="https://www.figma.com/design/APuUAtEs1ll7H4NqkHemzC/ChatBot?node-id=54-992&p=f&t=PGaYq7i8nDqNR4DP-0">🔗 Figma: link da prototipagem do chatbot</a>
+
+        <h3>Experiência com Clientes: Além do Código</h3>
+        <p>Minha atuação não se limitou ao desenvolvimento de código. Participei ativamente da criação de propostas para clientes:</p>
+        <ul>
+            <li><strong>Calls Técnicas:</strong> Realização de reuniões técnicas com clientes para entender suas necessidades e dores</li>
+            <li><strong>Criação de Arquiteturas:</strong> Desenvolvimento de arquiteturas do zero para as soluções propostas</li>
+            <li><strong>Cálculo de Custos AWS:</strong> Utilização da calculadora AWS para estimar custos dos projetos</li>
+            <li><strong>Estimativa de Tempo:</strong> Elaboração de estimativas de tempo para diversos tópicos dos projetos</li>
+        </ul>
+        
+        <div class="metric">
+            <strong>Clientes Atendidos:</strong> RJI, Apta, Blue3, Método, Blitzar, BuuDigital, Território Saber, Befly, Probrain
+            <button class="evidence-button" onclick="openModal('modal16')">📸 Criação de propostas e call com clientes</button>
+
+        </div>
+
+        <h3>Treinamento e Mentoria de Colegas</h3>
+        <div class="highlight-box">
+            <h4>Impacto na Equipe:</h4>
+            <ul>
+                <li><strong>Aline Vieira:</strong> Treinamento em front-end e prototipagem, reduzindo em até 5x o tempo de criação de componentes em projetos como BMW, Friboi e Bem Hospitalar</li>
+                <li><strong>Matheus Hugolini:</strong> Treinamento em front-end, boas práticas de código, como debugar, e estilizar mais rápidamente.</li>
+                <li><strong>Julia Silveira e Eduardo Silva:</strong> Treinamento em atendimento a tickets, processos internos e boas práticas</li>
+                <li><strong>Ramos:</strong> Treinamento em debug de aplicações cloud AWS e principais serviços (Lambda, API Gateway, S3, CodeBuild, CloudWatch, Pipelines, Secrets Manager)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modais para as evidências -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>Evidência: Refatoração do CaaS</h3>
+            <div class="image-placeholder">
+                <img src="images/modal1.png" alt="Print do status da atividade no jira">
+            </div>
+            <p>Links:</p>
+            <a target="_blank" href="https://daredeprojetos.atlassian.net/browse/PLAT-2426">Jira</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Evidência: Reconhecimento - Gestão de Tickets</h3>
+            <div class="image-placeholder">
+                <video  controls translate="yes">
+                    <source src="images/modal2.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+            <p style="font-weight: bold;">Transcrição do vídeo sobre Feedbacks recebido por Breno Pierin e Guilherme Carvalho:</p>
+            <p>Breno Pierin - "Eu quis dizer que a prioridade e a atuação em chamados... então a Nick pegou essa sprint, conseguiu focar nos chamados, diminuiu a incidência de paradas dentro da sprint, o que ajuda bastante no desenvolvimento dos itens que a gente teve... A atuação da Nick nos tickets tem sido muito efetiva na solução dos problemas e também na documentação das atividades"</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>Evidência: Primeira GMUD bem sucedida</h3>
+            <div class="image-placeholder">
+                <img style="object-fit: scale-down;" src="images/modal3.png" alt="Imagem contendo sucesso da GMUD da Jaqueline">
+            </div>
+            <p>Depois da normalização dos ambientes do DSM, os deploys são realizados sem dor de cabeça.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h3>Evidência: Primeira GMUD Bem-sucedida</h3>
+            <div class="image-placeholder">
+                Insira aqui o print da primeira GMUD realizada com sucesso
+            </div>
+            <p>Print da primeira GMUD realizada com sucesso após a normalização dos ambientes.</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h3>Evidência:  Gif de conversa - Complexidade</h3>
+            <div class="image-placeholder">
+                    <div class="carousel-container">
+                    <div class="carousel-slide2">
+                    <img  style="object-fit:scale-down; width: 800px;" src="images/modal5.png" alt="Imagem das APIS criadas rapidamente">
+                    <img style="object-fit:scale-down; width: 800px;" src="images/modal5_1.png" alt="Novo Serverless.yml">
+                    </div>
+                </div>
+            </div>
+            <p>Hesitação em passagem de task por conta de complexidade e estimativa da tela de gerenciamento de permissões.</p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h3>Link: Prototipagem do Chatbot Swift</h3>
+            <div class="image-placeholder">
+            <div class="image-placeholder">
+
+            </div>
+            </div>
+            <p>Link ou screenshot da prototipagem do chatbot Swift desenvolvida em 2 dias.</p>
+        </div>
+    </div>
+
+        <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <h3>Evidência: Atuação em Billing</h3>
+            <div class="image-placeholder">
+                <img style="width: 70%;" src="images/modal2.gif" alt="Gif facilitando amostra das eviências de atuações em Billing">
+            </div>
+            <p>Atuações realizadas via chat Teams.</p>
+        </div>
+    </div>
+
+        <div id="modal8" class="modal">
+        <div class="modal-content" style="height: 90vh;">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <h3>Evidência: Collection do DSM</h3>
+            <div class="image-placeholder">
+                <img style="width: 70%;" src="images/modal8.gif" alt="Gif facilitando amostra das eviências de estrutura de Collection">
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p>Roteiro do GIF.</p>
+                <p style="margin-right: 40px;">Link: <a target="_blank" href="https://daredeprojetos.atlassian.net/wiki/spaces/DoSystem/pages/263847947/DSM+Insomnia">Confluence</a></p>
+            </div>
+            <p style="margin-bottom: 0px;">1. Divulgação da Collection para o time.</p>
+            <p style="margin-bottom: 0px;">2. Documentação de como utilizar dentro do Confluence.</p>
+            <p style="margin-bottom: 0px;"> 3. Amostra da estrutura da Collection com: </p>
+            <div style="overflow-y: auto; height: 110px;">
+                <ul style="margin-top: 5px; margin-bottom: 35px;">
+                    <li>Módulos</li>
+                    <li>Descrições e nome das funções</li>
+                    <li>Requisições já montadas para auxílio</li>
+                    <li>Variáveis de ambiente já setadas com valores dos ambientes das APIs de teste</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <h3>Evidência: APIs e Serverless.yml</h3>
+            <div class="image-placeholder">
+                  <div class="carousel-container">
+                    <div class="carousel-slide">
+                    <img  style="object-fit:scale-down" src="images/modal9.png" alt="Imagem das APIS criadas rapidamente">
+                    <img src="images/modal9_1.png" alt="Novo Serverless.yml">
+                    </div>
+                </div>
+            </div>
+            <p>1. Novas APIs criadas, atuamente utilizadas como oficiais. OBS: Com nomes padronizados | Antes: prod-dev-dsm-back-end | Depois: prod-dsm-back-end-{VERSAO}</p>
+            <p>2. Novo arquivo serverless, com dinamismo de criar e atualizar APIs.</p>
+        </div>
+    </div>
+
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <h3>Evidência: Novas versões</h3>
+            <div class="image-placeholder">
+                  <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="images/modal10_1.png" alt="Novas funções criadas">
+                        <img  style="object-fit:scale-down" src="images/modal10.png" alt="Elogio do TL sobre proatividade">
+                    </div>
+                </div>
+            </div>
+            <p>1. Novas funções criadas.</p>
+            <p>2. Proatividade em atualização de versão do Node</p>
+        </div>
+    </div>
+
+    <div id="modal11" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal11')">&times;</span>
+            <h3>Evidência: Layers estabilizadas</h3>
+            <div class="image-placeholder">
+                  <div class="carousel-container">
+                    <div class="carousel-slide1">
+                        <img  style="object-fit:scale-down" src="images/modal11.png" alt="Elogio de colaborador sobre proatividade">
+                        <img src="images/modal11.gif" alt="Novas funções criadas">
+                    </div>
+                </div>
+            </div>
+            <p>1. Reconhecimento de uma boa documentação</p>
+            <p>2. Proatividade em aplicar estrtura de Layers no back do Portal do Cliente.</p>
+            <p>2.1. Documentar e compartilhar conhecimento obtido essencial para escalonamento e funcionalidade de aplicações.</p>
+        </div>
+    </div>
+
+    <div id="modal12" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal12')">&times;</span>
+            <h3>Evidência: Melhoria de Atuailzação de Horas desenvolvida</h3>
+            <div class="image-placeholder">
+                <img style="object-fit: scale-down;" src="images/modal12.gif" alt="Gif mostrando fluxo de atualização de horas via front">
+            </div>
+            <p>Funcionalidade com ótima trativa de experiência do usuário, ja que cada atualização pode levar cerca de 30 segundos.</p>
+        </div>
+    </div>
+
+        <div id="modal13" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal13')">&times;</span>
+            <h3>Evidência: Checkpoint</h3>
+            <div class="image-placeholder">
+                <img style="object-fit: scale-down;" src="images/modal13.png" alt="Gif mostrando fluxo de atualização de horas via front">
+            </div>
+            <p>POC com retorno de 1 Milhão para empresa.</p>
+        </div>
+    </div>
+
+        <div id="modal14" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal14')">&times;</span>
+            <h3>Back end: Migração de todo banco de dados</h3>
+            <div class="image-placeholder">
+            <div class="image-placeholder">
+                  <div class="carousel-container">
+                    <div class="carousel-slide3">
+                        <img style="object-fit:scale-down; width: 400px;" src="images/modal14.png" alt="Print ">
+                        <img  style="object-fit:scale-down; width: 270px;" src="images/modal14_1.png" alt="Elogio do TL sobre proatividade">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <p>Checkpoints para validação de andamento de scripts criados.</p>
+        </div>
+    </div>
+
+            <div id="modal15" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal15')">&times;</span>
+            <h3>Back end: Migração de todo banco de dados</h3>
+            <div class="image-placeholder">
+            <div class="image-placeholder">
+                  <div class="carousel-container">
+                    <div class="carousel-slide3">
+                        <img style="object-fit:scale-down; width: 400px;" src="images/modal15.png" alt="Print ">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <p>Checkpoints para validação de andamento de scripts criados | Links: <a target="_blank" href="https://www.figma.com/design/bMAc5dNVYy7YoQjB1q6blH/SPData?node-id=628-284&p=f&t=PGaYq7i8nDqNR4DP-0">Figma</a></p>
+        </div>
+    </div>
+
+            <div id="modal16" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal16')">&times;</span>
+            <h3>Evidência: Reuniões com cliente e Criação de Propostas</h3>
+            <div class="image-placeholder">
+            <div class="image-placeholder">
+<img alt="Gifr mostrando Calls e Propostas criadas" src="images/modal16.gif">
+            </div>
+            </div>
+            <p>Calls com clientes e Propostas criadas. Na época para diminuição de retrabalho criei um script em Python para automatizar modelo de PPT, editar e redimensionar imagens etc, entregando propostas em tempo record.</p>
+        </div>
+    </div>
+
+
+            <div id="modal17" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal17')">&times;</span>
+            <h3>Evidência: Reuniões com cliente e Apresentação de modelo de benchmarking para time</h3>
+            <div class="image-placeholder">
+            <div class="image-placeholder">
+<img alt="Gifr mostrando Calls e Propostas criadas" src="images/modal17.gif">
+            </div>
+            </div>
+            <p>Novo fluxo de projeto adequava respeitosamente o time de design , reduzindo conflitos entre devs e designers, melhorou comunicação e entendimento do desejo do cliente, e acelerou desenvolvimento de solução protipadas 10x, no qual hoje é utilizado em  todos os Projetos com Protótipos</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar modal clicando fora dele
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
