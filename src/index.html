@@ -209,27 +209,27 @@
     .carousel-container {
       position: relative;
       width: 100%;
-      height: 100%; /* ocupa a altura da janela */
+      height: 100%;
       overflow: hidden;
     }
 
     .carousel-slide {
       display: flex;
-      width: calc(100% * 2); /* 3 imagens, cada uma com 100% da largura */
+      width: calc(100% * 2);
       height: 100%;
       animation: slide2 9s infinite;
     }
 
     .carousel-slide1 {
       display: flex;
-      width: calc(100% * 2); /* 3 imagens, cada uma com 100% da largura */
+      width: calc(100% * 2);
       height: 100%;
       animation: slide1 30s infinite;
     }
 
     .carousel-slide2 {
       display: flex;
-      width: calc(100% * 2); /* 3 imagens, cada uma com 100% da largura */
+      width: calc(100% * 2);
       height: 100%;
       animation: slide2 15s infinite;
     }
@@ -242,8 +242,8 @@
 
 
     @keyframes slide1 {
-    0%   { transform: translateX(0); }        /* Início: imagem 1 */
-    20%  { transform: translateX(0); }        /* Fica parado até 50% */
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
     50%  { transform: translateX(-50%); }
     70%  { transform: translateX(-50%); }
     90%  { transform: translateX(-50%); }
@@ -251,8 +251,8 @@
     }
 
     @keyframes slide2 {
-    0%   { transform: translateX(0); }        /* Início: imagem 1 */
-    20%  { transform: translateX(0); }        /* Fica parado até 50% */
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
     50%  { transform: translateX(-50%); }
     70%  { transform: translateX(-50%); }
     90%  { transform: translateX(-50%); }
@@ -260,8 +260,8 @@
     }
 
     @keyframes slide2 {
-    0%   { transform: translateX(0); }        /* Início: imagem 1 */
-    20%  { transform: translateX(0); }        /* Fica parado até 50% */
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
     50%  { transform: translateX(-50%); }
     70%  { transform: translateX(-50%); }
     90%  { transform: translateX(-50%); }
@@ -298,7 +298,7 @@
         <div class="highlight-box">
             <strong>Marco Histórico:</strong> Primeira profissional na história da equipe a esvaziar completamente a fila de tickets de suporte.
         </div>
-        <p>Com base nas solicitações e nos padrões identificados, desenvolvi um documento abrangente de melhorias para o DSM  focado em clientes internos. Esta iniciativa não apenas resolveu problemas imediatos, mas também pavimentou o caminho para otimizações futuras.</p>
+        <p>Com base nas solicitações e nos padrões identificados, desenvolvi um documento abrangente de melhorias para o DSM e o Portal do Cliente, focado em clientes internos. Esta iniciativa não apenas resolveu problemas imediatos, mas também pavimentou o caminho para otimizações futuras.</p>
         <button class="evidence-button" onclick="openModal('modal2')">📸 Ver reconhecimento sobre gestão de tickets</button>
         <p><strong>OBS:</strong> 2 Melhorias já foram desenvolvidas no primeiro semestre de 2025. Link de melhorias anotadas: <a target="_blank" href="https://daredeprojetos.atlassian.net/wiki/spaces/DoSystem/pages/220954631/Melhorias+Salesforce+DSM">Confluence</a></p>
 
@@ -391,17 +391,18 @@
         <button class="evidence-button" onclick="openModal('modal13')">📸 Ver Checkpoint</button>
     
 
-        <h3>Projeto Houpa: Pioneirismo em Prototipagem e Design</h3>
+        <h3>Projeto Houpa: Pioneirismo em Prototipagem e Design, e Case de Sucesso</h3>
         <div class="highlight-box">
-            <strong>Marco:</strong> Minha primeira experiência com prototipagem e a primeira colaboradora a prototipar na Dosystems.
+            <strong>Marco:</strong> Minha primeira experiência com prototipagem e a primeira colaboradora a prototipar na Dosystems. Projeto considerado case de sucesso nosso e na AWS.
         </div>
-        <p>Obtive um grande desempenho no redesenho completo da UI/UX da empresa, introduzindo fundamentos de design como benchmarking (pesquisa de mercado) e um fluxo de desenvolvimento de projetos com atuação de designers.</p>
+        <p>Obtive um grande desempenho no redesenho completo da UI/UX da empresa, introduzindo fundamentos de design como benchmarking (pesquisa de mercado) e um fluxo de desenvolvimento de projetos com atuação de designers. Fui convocada para redigir o documento de case de sucesso que enviamos para a AWS analisar e postar como case de sucesso da Darede, e também fiz documento para postar como case de sucesso dentro do blog da Darede.</p>
         <p><strong>Minha Atuação:</strong></p>
         <ul>
             <li><strong>Back-end:</strong> Migração de banco de dados antigo para novo. Coleta, Filtro, Tratamento e Inserção         <button class="evidence-button" onclick="openModal('modal14')">📸 Ver calls</button>
 </li>
             <li><strong>Front-end:</strong> Desenvolvimento de telas</li>
             <li><strong>UI UX:</strong> Implementação de fluxo funcional, e fundamentos de UIUX para valorizar produto do cliente         <button class="evidence-button" onclick="openModal('modal17')">📸 Ver evidências</button>
+            <li><strong>Documentação:</strong> Criação de documentos de Case de Sucesso para AWS e Darede         <button class="evidence-button" onclick="openModal('modal18')">📸 Ver evidências</button>
 </li>
         </ul>
 
@@ -427,10 +428,16 @@
         </ul>
         
         <div class="metric">
-            <strong>Clientes Atendidos:</strong> RJI, Apta, Blue3, Método, Blitzar, BuuDigital, Território Saber, Befly, Probrain
-            <button class="evidence-button" onclick="openModal('modal16')">📸 Criação de propostas e call com clientes</button>
+            <strong>Clientes Atendidos:</strong> RJI, Apta, Blue3, Método, Blitzar, BuuDigital, Território Saber, Befly, Probrain, ENGIE, HCENTER
+            <button class="evidence-button" onclick="openModal('modal16' )">📸 Criação de propostas e call com clientes</button>
 
         </div>
+        <h3>ENGIE: Liderança Técnica e Pioneirismo em AWS GreenGrass</h3>
+        <div class="highlight-box">
+            <strong>Marco Histórico:</strong> Condução da primeira call técnica com cliente, demonstrando expertise em AWS GreenGrass e rápida adaptabilidade.
+        </div>
+        <p>Fui a profissional responsável por conduzir a call técnica com a ENGIE, uma reunião crucial para o fechamento de um contrato. Minha atuação foi destacada por ser a única com conhecimento aprofundado sobre o serviço AWS GreenGrass, adquirido especificamente para essa ocasião, o que evidencia minha capacidade de aprendizado rápido e proatividade. Essa expertise foi fundamental para compreender as necessidades do cliente e apresentar soluções eficazes, consolidando minha posição como referência técnica e negociadora.</p>
+        <button class="evidence-button" onclick="openModal('modal_engie')">📸 Ver evidências da call com ENGIE</button>
 
         <h3>Treinamento e Mentoria de Colegas</h3>
         <div class="highlight-box">
@@ -444,7 +451,6 @@
         </div>
     </div>
 
-    <!-- Modais para as evidências -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal1')">&times;</span>
@@ -669,13 +675,13 @@
         </div>
     </div>
 
-            <div id="modal16" class="modal">
+    <div id="modal16" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal16')">&times;</span>
             <h3>Evidência: Reuniões com cliente e Criação de Propostas</h3>
             <div class="image-placeholder">
             <div class="image-placeholder">
-<img alt="Gifr mostrando Calls e Propostas criadas" src="images/modal16.gif">
+            <img alt="Gifr mostrando Calls e Propostas criadas" src="images/modal16.gif">
             </div>
             </div>
             <p>Calls com clientes e Propostas criadas. Na época para diminuição de retrabalho criei um script em Python para automatizar modelo de PPT, editar e redimensionar imagens etc, entregando propostas em tempo record.</p>
@@ -683,7 +689,7 @@
     </div>
 
 
-            <div id="modal17" class="modal">
+    <div id="modal17" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal17')">&times;</span>
             <h3>Evidência: Reuniões com cliente e Apresentação de modelo de benchmarking para time</h3>
@@ -693,6 +699,37 @@
             </div>
             </div>
             <p>Novo fluxo de projeto adequava respeitosamente o time de design , reduzindo conflitos entre devs e designers, melhorou comunicação e entendimento do desejo do cliente, e acelerou desenvolvimento de solução protipadas 10x, no qual hoje é utilizado em  todos os Projetos com Protótipos</p>
+        </div>
+    </div>
+
+    <div id="modal_engie" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal_engie')">&times;</span>
+            <h3>Evidência: Call com ENGIE</h3>
+            <div class="image-placeholder">
+                <div class="image-placeholder">
+                  <div class="carousel-container">
+                    <div class="carousel-slide1">
+                        <img  style="object-fit:scale-down; width: 680px;" src="images/modalEngie3.png" alt="Novas funções criadas">
+                        <img  style="object-fit:scale-down" src="images/modalEngie2.png" alt="Elogio de colaborador sobre proatividade">
+                    </div>
+                </div>
+            </div>  
+            </div>
+        </div>
+    </div>
+
+    <div id="modal18" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal18')">&times;</span>
+            <h3>Evidência: Criação das documentações de Caso de Sucesso</h3>
+            <div class="image-placeholder">
+            <div class="image-placeholder">
+                <img alt="Print de entrega das Doc criadas" src="images/docHoupa.png">
+            </div>
+            </div>
+            <a class="evidence-button" download href="docs/Case_AWS.docx">⬇️ Baixar Case de Sucesso enviado para AWS</a>
+            <a class="evidence-button" download href="docs/Case_DAREDE.docx">⬇️ Baixar Case de Sucesso Blog Darede</a>
         </div>
     </div>
 
@@ -707,7 +744,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Fechar modal clicando fora dele
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
@@ -715,7 +751,6 @@
             }
         }
 
-        // Fechar modal com ESC
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 const modals = document.querySelectorAll('.modal');
@@ -730,4 +765,3 @@
     </script>
 </body>
 </html>
-
